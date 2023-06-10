@@ -31,6 +31,7 @@ function TabRoute() {
           tabBarIcon: ({ color }) => {
             return <Icon name="home" color={color} size={25} />;
           },
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -40,6 +41,7 @@ function TabRoute() {
           tabBarIcon: ({ color }) => {
             return <Icon name="checklist" color={color} size={25} />;
           },
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -49,6 +51,7 @@ function TabRoute() {
           tabBarIcon: ({ color }) => {
             return <Icon name="person" color={color} size={25} />;
           },
+          headerShown: false,
         }}
       />
     </Tab.Navigator>

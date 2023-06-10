@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from '../components/Header';
+import { ScrollView } from 'react-native-gesture-handler';
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App. your app!</Text>
+    <ScrollView>
+    <Header/>
+      
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
