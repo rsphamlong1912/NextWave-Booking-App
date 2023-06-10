@@ -7,7 +7,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/HomeScreen';
 import BookingHistory from './screens/BookingHistory';
 import RestaurantDetail from './screens/RestaurantDetail';
+import Map from './screens/MapScreen';
 import ComboDecoration from './screens/ComboDecoration';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -48,7 +50,7 @@ function TabRoute() {
       />
       <Tab.Screen
         name="Profile"
-        component={Home}
+        component={Map}
         options={{
           tabBarIcon: ({ color }) => {
             return <Icon name="person" color={color} size={25} />;
