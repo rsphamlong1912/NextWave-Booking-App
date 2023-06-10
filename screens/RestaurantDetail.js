@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'rea
 import Header from '../components/Header';
 import Restaurant from './../components/Restaurant';
 import RestaurantCard from '../components/RestaurantCard';
+import FloatingButton from './../components/FloatingButton';
 
 export default function RestaurantDetail({navigation, route}) {
     return (
@@ -11,8 +12,9 @@ export default function RestaurantDetail({navigation, route}) {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <RestaurantCard item={route.params.detail} navigation={navigation}/>
                 <Restaurant />
-                <View><Text>{route.params.detail.name}</Text></View>
+                
             </ScrollView>
+            <FloatingButton title="Chọn gói combo" onPress={()=>navigation.navigate('ComboDecoration')}/>
         </View>
     );
 }
