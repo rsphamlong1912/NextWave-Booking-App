@@ -29,7 +29,7 @@ const Header = () => {
             </View>
 
             <View style={styles.boxInput}>
-                <TextInput style={styles.input} placeholder="Tìm kiếm nhà hàng, quán ăn" />
+                <TextInput style={styles.input} placeholder="Tìm kiếm nhà hàng, quán ăn..." />
                 <Icon name="search" size={15} />
             </View>
         </View>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderColor: '#D0D0D0',
-        borderRadius: 30,
+        borderRadius: 15,
         borderWidth: 1,
         marginTop: 17,
         marginRight: 55,
