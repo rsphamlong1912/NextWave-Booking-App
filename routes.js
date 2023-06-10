@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './screens/HomeScreen';
 import BookingHistory from './screens/BookingHistory';
+import RestaurantDetail from './screens/RestaurantDetail';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -63,7 +64,7 @@ export default function Route() {
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="Home" component={TabRoute} />
-        {/* <Stack.Screen name="Restaurant" component={Restaurant} /> */}
+        <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
