@@ -45,7 +45,7 @@ const TopPlacesCarousel = () => {
             data={listCarousel}
             showsHorizontalScrollIndicator={false}
             horizontal
-            keyExtractor={i=> i.id}
+            keyExtractor={i => i.id}
             renderItem={({ item }) => {
                 return (
                     <TouchableOpacity style={{ marginLeft: 20, marginTop: 20, }}>
@@ -68,14 +68,12 @@ const styles = StyleSheet.create({
     card: {
         height: 130,
         width: 300,
-        
     },
     imageBox: {
         height: 130,
         width: 300,
         borderRadius: 30,
-     overflow: 'hidden'
-     
+        overflow: 'hidden',
     },
     image: {
         height: 130,
