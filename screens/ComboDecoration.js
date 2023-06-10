@@ -9,46 +9,51 @@ import {
 import { FlatList } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Ionicons";
 import COLORS from "../constants/colors";
-import foods from "../constants/foods";
-import { PrimaryButton, SecondaryButton } from "../components/Button";
-import ItemCard from "../components/ItemCard";
-
+import ItemCardDecor from "../components/ItemCardDecor";
+import FloatingButton from './../components/FloatingButton'
 const restaurantsBooking = [
   {
     id: "1",
-    name: "Bơ bán bò",
-    address: "203 Đ.Lê Văn Việt, Hiệp Phú",
-    time: "10:00 AM - 11:00 PM",
-    image: require("./../assets/Carousel/222.webp"),
+    name: "Combo Decor Table",
+    category: "Table Decor",
+    image: require("./../assets/Decoration/Table.jpeg"),
   },
   {
-    id: "4",
-    name: "Vua Hải Sản",
-    address: "95E Quang Trung, Hiệp Phú",
-    time: "10:00 AM - 11:00 PM",
-    image: require("./../assets/Carousel/333.jpg"),
+    id: "2",
+    name: "Flower",
+    category: "Flower Decor",
+    image: require("./../assets/Decoration/Flower.webp"),
+  },
+  {
+    id: "3",
+    name: "Candle",
+    category: "Candle Decor",
+    image: require("./../assets/Decoration/Candle.webp"),
   },
 ];
 
-const BookingHistory = () => {
+const ComboDecoration = ({ navigation }) => {
   return (
-    <SafeAreaView style={{ backgroundColor: COLORS.light, flex: 1 }}>
-      <View style={style.header}>
-        <Text
-          style={{
-            fontSize: 18,
-            fontWeight: "bold",
-            color: "#fff",
-          }}
-        >
-          Lịch sử đặt chỗ
-        </Text>
-      </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack}>
+        <View style={style.header}>
+          <Icon name="chevron-back" size={28} color={'#fff'} />
+          <Text
+            style={{
+              fontSize: 18,
+              fontWeight: "bold",
+              color: "#fff",
+            }}
+          >
+            Chọn gói Combo Decoration
+          </Text>
+        </View>
+      </TouchableOpacity>
       <FlatList
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 80 }}
         data={restaurantsBooking}
-        renderItem={({ item }) => <ItemCard item={item} />}
+        renderItem={({ item }) => <ItemCardDecor item={item} />}
         ListFooterComponentStyle={{ paddingHorizontal: 20, marginTop: 20 }}
         ListFooterComponent={() => (
           <View>
@@ -59,7 +64,7 @@ const BookingHistory = () => {
               <View style={style.btnContainer}>
                 <Text style={style.btnText}>
                   <Text>
-                    <Icon name="add" size={18} /> Đặt thêm chỗ
+                    <Icon name="add" size={14} /> Đặt thêm
                   </Text>
                 </Text>
               </View>
@@ -67,6 +72,8 @@ const BookingHistory = () => {
           </View>
         )}
       />
+      <FloatingButton title="Đặt chỗ và thanh toán" onPress={()=>navigation.navigate('ComboDecoration')}/>
+
     </SafeAreaView>
   );
 };
@@ -92,7 +99,7 @@ const style = StyleSheet.create({
   btnText: {
     color: COLORS.grey,
     fontWeight: "500",
-    fontSize: 18,
+    fontSize: 14,
   },
   btnContainer: {
     backgroundColor: COLORS.white,
@@ -104,4 +111,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default BookingHistory;
+export default ComboDecoration;

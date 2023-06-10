@@ -11,10 +11,14 @@ const RestaurantCard = ({navigation, item}) => {
     // <View style={styles.container}>
     //   <View style={styles.cardContainer}>
     <SafeAreaView style={{ backgroundColor: COLORS.light, flex: 1}}>
-      <TouchableOpacity onPress={navigation.goBack}>
+      <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack}>
       <View style={styles.header}>
-        <Icon name="chevron-back" size={28} />
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+        <Icon name="chevron-back" size={28} color={'#fff'}/>
+        <Text style={{
+            fontSize: 18,
+            fontWeight: "bold",
+            color: "#fff",
+          }}>
           Chi tiết nhà hàng
         </Text>
       </View>
@@ -76,7 +80,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 20,
-    color: '#66CCFF'
+    color: '#32b768'
   },
 
   Card: {
@@ -94,11 +98,19 @@ const styles = StyleSheet.create({
     elevation: 9,
   },
 
+  // header: {
+  //   paddingVertical: 20,
+  //   flexDirection: "row",
+  //   alignItems: "center",
+  //   marginHorizontal: 20,
+  // },
   header: {
     paddingVertical: 20,
     flexDirection: "row",
     alignItems: "center",
-    marginHorizontal: 20,
+    justifyContent: "center",
+    marginBottom: 20,
+    backgroundColor: COLORS.primary,
   },
 
   // cardContainer: {

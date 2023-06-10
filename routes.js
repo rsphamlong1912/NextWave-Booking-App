@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/HomeScreen';
 import BookingHistory from './screens/BookingHistory';
 import RestaurantDetail from './screens/RestaurantDetail';
+import ComboDecoration from './screens/ComboDecoration';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -65,6 +66,8 @@ export default function Route() {
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="Home" component={TabRoute} />
         <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
+        <Stack.Screen name="ComboDecoration" component={ComboDecoration} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
