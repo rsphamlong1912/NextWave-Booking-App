@@ -5,7 +5,8 @@ import Header from '../components/Header';
 import listCarousel from '../constants/listCarousel'
 import TopPlacesCarousel from './../components/TopPlacesCarousel'
 import Restaurant from './../components/Restaurant'
-
+import RestaurantCard from '../components/RestaurantCard';
+import RestaurantDetail from './RestaurantDetail';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <TopPlacesCarousel />
         <Restaurant/>     
+        {/* <RestaurantDetail/> */}
       </ScrollView>
     </View>
   );
