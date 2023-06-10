@@ -6,7 +6,7 @@ import ItemRestaurant from "./../components/ItemRestaurant";
 const restaurant = [
     {
         id: "1",
-        name: "Bơ bán bò",
+        name: "Bơ Bán Bò",
         address: "203 Đ.Lê Văn Việt, Hiệp Phú",
         time: "10:00 AM - 11:00 PM",
         image: require("./../assets/Carousel/222.webp"),
@@ -35,7 +35,7 @@ const restaurant = [
 ];
 
 
-const Restaurant = () => {
+const Restaurant = ({navigation}) => {
 
     return (
         <View >
@@ -49,7 +49,7 @@ const Restaurant = () => {
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: 80 }}
                 data={restaurant}
-                renderItem={({ item }) => <ItemRestaurant item={item} />}
+                renderItem={({ item }) => <ItemRestaurant item={item} navigation={navigation} />}
             />
         </View>
 

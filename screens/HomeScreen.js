@@ -8,14 +8,14 @@ import Restaurant from './../components/Restaurant'
 import RestaurantCard from '../components/RestaurantCard';
 import RestaurantDetail from './RestaurantDetail';
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <View style={styles.container}>
       <Header />
       <StatusBar style="auto" />
       <ScrollView showsVerticalScrollIndicator={false}>
         <TopPlacesCarousel />
-        <Restaurant/>     
+        <Restaurant navigation={navigation} />     
         {/* <RestaurantDetail/> */}
       </ScrollView>
     </View>

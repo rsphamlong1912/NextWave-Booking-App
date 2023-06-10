@@ -3,7 +3,9 @@ import { StyleSheet, TouchableOpacity, View, Text, Image } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import COLORS from "../constants/colors";
 import { DetailButton } from "./Button";
-const ItemRestaurant = ({ item }) => {
+
+
+const ItemRestaurant = ({ item, navigation }) => {
   return (
     <View style={style.itemCard}>
       <Image source={item.image} style={{ height: 80, width: 80, borderRadius: 5 }} />
@@ -23,7 +25,7 @@ const ItemRestaurant = ({ item }) => {
       </View>
       <View style={{alignItems: "center", marginTop: 60 }}>
         <View style={{ }}>
-          <DetailButton title="Đặt chỗ" />
+          <DetailButton title="Đặt chỗ" onPress={()=>navigation.navigate('RestaurantDetail',{detail: item})}/>
         </View>
       </View>
     </View>

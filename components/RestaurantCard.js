@@ -1,35 +1,37 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Card, ListItem, Button} from 'react-native-elements'
 import COLORS from "../constants/colors";
 import Icon from "react-native-vector-icons/Ionicons";
 
 
 
-const RestaurantCard = () => {
+const RestaurantCard = ({navigation, item}) => {
   return (
     // <View style={styles.container}>
     //   <View style={styles.cardContainer}>
-    <SafeAreaView style={{ backgroundColor: COLORS.light, flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: COLORS.light, flex: 1}}>
+      <TouchableOpacity onPress={navigation.goBack}>
       <View style={styles.header}>
         <Icon name="chevron-back" size={28} />
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>
           Chi tiết nhà hàng
         </Text>
       </View>
-      <Card>
-        <Text style={styles.name}>Bơ Bán Bò</Text>
+      </TouchableOpacity>
+      <Card containerStyle={{ borderRadius: 10, marginBottom: 20, elevation: 0}}>
+        <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.address}>
           <Icon name="location-sharp" size={15} color="#32b768" />
-          203 Đ.Lê Văn Việt, Hiệp Phú
+          {item.address}
         </Text>
-        <Card.Image source={require('./../assets/boBanBo.webp')} style={{ borderRadius: 10 }} />
+        <Card.Image source={item.image} style={{ borderRadius: 10 }} />
         <Text style={styles.sub}>
           <Icon name="time-sharp" size={15} color="#32b768" />
           Giờ mở cửa
         </Text>
         <Text style={styles.time}>
-          10:00 AM - 12:00 PM
+        {item.time}
         </Text>
         <Text style={styles.map}>Xem địa chỉ</Text>
       </Card>
@@ -50,25 +52,23 @@ const styles = StyleSheet.create({
     marginLeft: 3,
     fontSize: 20,
     fontWeight: 'bold',
-    // paddingRight: 20
+    marginBottom: 5
   },
   address: {
     marginLeft: 1,
-    paddingLeft: 10,
     fontSize: 13,
     color: '#908e8c',
     marginBottom: 7
   },
   sub: {
     marginLeft: 1,
-    paddingLeft: 10,
     fontSize: 13,
     color: '#908e8c',
     marginTop: 15
   },
 
   time: {
-    marginLeft: 7
+    marginLeft: 1
   },
   map: {
     fontSize: 12,
