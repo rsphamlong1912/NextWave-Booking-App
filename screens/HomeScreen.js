@@ -4,6 +4,7 @@ import Header from '../components/Header';
 // import { ScrollView } from 'react-native-gesture-handler';
 import listCarousel from '../constants/listCarousel'
 import TopPlacesCarousel from './../components/TopPlacesCarousel'
+import Restaurant from './../components/Restaurant'
 
 
 export default function Home() {
@@ -12,7 +13,8 @@ export default function Home() {
       <Header />
       <StatusBar style="auto" />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TopPlacesCarousel />      
+        <TopPlacesCarousel />
+        <Restaurant/>     
       </ScrollView>
     </View>
   );
