@@ -37,7 +37,10 @@ const RestaurantCard = ({navigation, item}) => {
         <Text style={styles.time}>
         {item.time}
         </Text>
+        <TouchableOpacity style={styles.positionMap} onPress={()=> {navigation.navigate('Map', {item: item})}} >
         <Text style={styles.map}>Xem địa chỉ</Text>
+        </TouchableOpacity>
+        
       </Card>
     </SafeAreaView>
   );
@@ -77,12 +80,13 @@ const styles = StyleSheet.create({
   map: {
     fontSize: 12,
     textDecorationLine: 'underline',
+    color: '#32b768'
+  },
+  positionMap: {
     position: 'absolute',
     right: 0,
     top: 20,
-    color: '#32b768'
   },
-
   Card: {
     backgroundColor: '#fffff',
     height: 100,
