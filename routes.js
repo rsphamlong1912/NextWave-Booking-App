@@ -1,15 +1,15 @@
-import React from 'react';
-import Icon from 'react-native-vector-icons/Octicons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
+import Icon from "react-native-vector-icons/Octicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import Home from './screens/HomeScreen';
-import BookingHistory from './screens/BookingHistory';
-import RestaurantDetail from './screens/RestaurantDetail';
-import Map from './screens/MapScreen';
-import ComboDecoration from './screens/ComboDecoration';
-
+import Home from "./screens/HomeScreen";
+import BookingHistory from "./screens/BookingHistory";
+import RestaurantDetail from "./screens/RestaurantDetail";
+import Map from "./screens/MapScreen";
+import ComboDecoration from "./screens/ComboDecoration";
+import Settings from "./screens/Settings";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -18,8 +18,8 @@ function TabRoute() {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: '#32b768',
-        inactiveTintColor: 'gray',
+        activeTintColor: "#32b768",
+        inactiveTintColor: "gray",
         showLabel: false,
         style: {
           height: 60,
@@ -40,7 +40,7 @@ function TabRoute() {
       />
       <Tab.Screen
         name="History"
-        component={BookingHistory}
+        component={Settings}
         options={{
           tabBarIcon: ({ color }) => {
             return <Icon name="checklist" color={color} size={25} />;
