@@ -9,8 +9,6 @@ import {
 import { FlatList } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Ionicons";
 import COLORS from "../constants/colors";
-import foods from "../constants/foods";
-import { PrimaryButton, SecondaryButton } from "../components/Button";
 import ItemCard from "../components/ItemCard";
 
 const restaurantsBooking = [
@@ -32,7 +30,7 @@ const restaurantsBooking = [
 
 const BookingHistory = () => {
   return (
-    <SafeAreaView style={{ backgroundColor: COLORS.light, flex: 1 }}>
+    <SafeAreaView style={{flex: 1 }}>
       <View style={style.header}>
         <Text
           style={{

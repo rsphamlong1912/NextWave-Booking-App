@@ -40,7 +40,7 @@ function TabRoute() {
       />
       <Tab.Screen
         name="History"
-        component={Settings}
+        component={BookingHistory}
         options={{
           tabBarIcon: ({ color }) => {
             return <Icon name="checklist" color={color} size={25} />;
@@ -50,7 +50,7 @@ function TabRoute() {
       />
       <Tab.Screen
         name="Profile"
-        component={Map}
+        component={Settings}
         options={{
           tabBarIcon: ({ color }) => {
             return <Icon name="person" color={color} size={25} />;
