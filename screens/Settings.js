@@ -5,9 +5,10 @@ import {
   ScrollView,
   StyleSheet,
   Image,
+  SafeAreaView
 } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+// import { SafeAreaView } from "react-native-safe-area-context";
 import COLORS from "../constants/colors";
 import Icon from "react-native-vector-icons/Ionicons";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -36,21 +37,21 @@ const Settings = ({ navigation }) => {
   ];
 
   const renderSettingsItem = ({ icon, text, sub }) => (
-    <TouchableOpacity
+    <TouchableOpacity activeOpacity={0.5}
       style={{
         flexDirection: "row",
         alignItems: "center",
         paddingVertical: 8,
-        paddingLeft: 12,
+        paddingLeft: 20,
         backgroundColor: COLORS.white,
       }}
     >
-      <MaterialIcons name={icon} size={24} color="black" />
+      <MaterialIcons name={icon} size={24} color="grey" />
       <Text
         style={{
-          marginLeft: 36,
+          marginLeft: 15,
           fontWeight: 600,
-          fontSize: 16,
+          fontSize: 15,
           minWidth: 200,
         }}
       >
@@ -59,9 +60,9 @@ const Settings = ({ navigation }) => {
       <MaterialIcons
         name={sub}
         size={24}
-        color="black"
+        color="grey"
         style={{
-          marginLeft: 36,
+          marginLeft: 70,
           fontWeight: 600,
           fontSize: 24,
         }}
@@ -73,37 +74,23 @@ const Settings = ({ navigation }) => {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: COLORS.light,
-      }}
-    >
-      <View
-        style={{
-          marginHorizontal: 12,
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
+      }}>
+      <View style={style.header}>
+        <Text
           style={{
-            position: "absolute",
-            left: 0,
+            fontSize: 18,
+            fontWeight: "bold",
+            color: "#fff",
           }}
         >
-          <MaterialIcons
-            name="keyboard-arrow-left"
-            size={24}
-            color={COLORS.black}
-          />
-        </TouchableOpacity>
-
-        <Text style={{}}>Settings</Text>
+          Thông tin tài khoản
+        </Text>
       </View>
 
       <View style={style.itemCard}>
         <Image
           source={require("./../assets/avatar.jpeg")}
-          style={{ height: 40, width: 40, borderRadius: 50 }}
+          style={{ height: 50, width: 50, borderRadius: 50 }}
         />
         <View
           style={{
@@ -122,22 +109,21 @@ const Settings = ({ navigation }) => {
         </View>
         <View>
           <Icon
-            name="notifications-circle-outline"
+            name="notifications"
             size={30}
             color={COLORS.grey}
           />
         </View>
       </View>
 
-      <ScrollView style={{ marginHorizontal: 12 }}>
+      <ScrollView style={{ marginHorizontal: 20 }}>
         {/* Account */}
         <View style={{ marginBottom: 12 }}>
           <Text style={{ marginVertical: 10 }}>Account </Text>
           <View
             style={{
-              borderRadius: 12,
               backgrounColor: COLORS.gray,
-              borderRadius: 20,
+              borderRadius: 5,
               overflow: "hidden",
             }}
           >
@@ -154,9 +140,8 @@ const Settings = ({ navigation }) => {
           <Text style={{ marginVertical: 10 }}>Settings</Text>
           <View
             style={{
-              borderRadius: 12,
+              borderRadius: 5,
               backgrounColor: COLORS.gray,
-              borderRadius: 20,
               overflow: "hidden",
             }}
           >
@@ -186,13 +171,12 @@ const Settings = ({ navigation }) => {
 
 const style = StyleSheet.create({
   itemCard: {
-    height: 50,
-    elevation: 1,
-    borderRadius: 10,
+    height: 80,
+    borderRadius: 5,
     backgroundColor: COLORS.white,
     marginVertical: 5,
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 20,
+    marginRight: 20,
     marginTop: 10,
     paddingHorizontal: 10,
     flexDirection: "row",
@@ -207,10 +191,18 @@ const style = StyleSheet.create({
     backgroundColor: "red",
     height: 35,
     width: 130,
-    borderRadius: 10,
+    borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 10,
+  },
+  header: {
+    paddingVertical: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 20,
+    backgroundColor: COLORS.primary,
   },
 });
 
