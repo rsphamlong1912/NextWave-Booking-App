@@ -10,6 +10,8 @@ const restaurant = [
         address: "203 Đ.Lê Văn Việt, Hiệp Phú",
         time: "10:00 AM - 11:00 PM",
         image: require("./../assets/Carousel/222.webp"),
+        latitude: 10.8441, 
+        longitude: 106.78288,
     },
     {
         id: "2",
@@ -17,6 +19,8 @@ const restaurant = [
         address: "402 Đ.Lê Văn Việt, Hiệp Phú",
         time: "09:00 AM - 11:00 PM",
         image: require("./../assets/Carousel/111.jpg"),
+        latitude: 10.844881042642191, 
+        longitude: 106.78698599634549,
     },
     {
         id: "3",
@@ -24,6 +28,8 @@ const restaurant = [
         address: "139 Hẻm 445, Phước Long B",
         time: "08:00 AM - 08:00 PM",
         image: require("./../assets/Carousel/333.jpg"),
+        latitude: 10.848490623116383, 
+        longitude: 106.77529661169041,
     },
     {
         id: "4",
@@ -31,6 +37,8 @@ const restaurant = [
         address: "95E Quang Trung, Hiệp Phú",
         time: "10:00 AM - 11:00 PM",
         image: require("./../assets/Carousel/222.webp"),
+        latitude: 10.837008026767474, 
+        longitude: 106.78176886750917,
     },
 ];
 

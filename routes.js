@@ -69,6 +69,9 @@ export default function Route() {
         <Stack.Screen name="Home" component={TabRoute} />
         <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
         <Stack.Screen name="ComboDecoration" component={ComboDecoration} />
+
+        <Stack.Screen name="Map" component={Map} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
