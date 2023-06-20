@@ -3,69 +3,70 @@ import Icon from "react-native-vector-icons/Octicons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-
 import Home from "./screens/HomeScreen";
 import BookingHistory from "./screens/BookingHistory";
 import RestaurantDetail from "./screens/RestaurantDetail";
 import Map from "./screens/MapScreen";
 import ComboDecoration from "./screens/ComboDecoration";
 import Settings from "./screens/Settings";
-
+import Login from "./screens/Login"
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+import TabRoute from "./components/TabRoute";
 
-function TabRoute() {
-  return (
-    <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: "#32b768",
-        inactiveTintColor: "gray",
-        showLabel: false,
-        style: {
-          height: 60,
-          paddingTop: 10,
-          paddingBottom: 5,
-        },
-      }}
-    >
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarIcon: ({ color }) => {
-            return <Icon name="home" color={color} size={25} />;
-          },
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="History"
-        component={BookingHistory}
-        options={{
-          tabBarIcon: ({ color }) => {
-            return <Icon name="checklist" color={color} size={25} />;
-          },
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Settings}
-        options={{
-          tabBarIcon: ({ color }) => {
-            return <Icon name="person" color={color} size={25} />;
-          },
-          headerShown: false,
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
+// const TabRoute = () => {
+//   return (
+//     <Tab.Navigator
+//       tabBarOptions={{
+//         activeTintColor: "#32b768",
+//         inactiveTintColor: "gray",
+//         showLabel: false,
+//         style: {
+//           height: 60,
+//           paddingTop: 10,
+//           paddingBottom: 5,
+//         },
+//       }}
+//     >
+//       <Tab.Screen
+//         name="Home"
+//         component={Home}
+//         options={{
+//           tabBarIcon: ({ color }) => {
+//             return <Icon name="home" color={color} size={25} />;
+//           },
+//           headerShown: false,
+//         }}
+//       />
+//       <Tab.Screen
+//         name="History"
+//         component={BookingHistory}
+//         options={{
+//           tabBarIcon: ({ color }) => {
+//             return <Icon name="checklist" color={color} size={25} />;
+//           },
+//           headerShown: false,
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Profile"
+//         component={Settings}
+//         options={{
+//           tabBarIcon: ({ color }) => {
+//             return <Icon name="person" color={color} size={25} />;
+//           },
+//           headerShown: false,
+//         }}
+//       />
+//     </Tab.Navigator>
+//   );
+// }
 
 export default function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none">
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={TabRoute} />
         <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
         <Stack.Screen name="ComboDecoration" component={ComboDecoration} />
