@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import {  } from 'react-native-maps';
 import Icon from "react-native-vector-icons/Ionicons";
 import { StyleSheet, View, Dimensions, TouchableOpacity, Text, SafeAreaView } from 'react-native';
 import * as Location from 'expo-location';
@@ -49,6 +50,7 @@ export default function Map({ navigation, route }) {
             </TouchableOpacity>
             <MapView style={styles.map}
                 region={mapRegion}
+                provider={PROVIDER_GOOGLE}
             >
                 <Marker coordinate={mapRegion} title={route.params.item.name} />
             </MapView>
