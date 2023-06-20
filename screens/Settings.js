@@ -14,7 +14,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Settings = ({ navigation }) => {
   const cacheAndCellularItems = [
@@ -48,11 +48,14 @@ const Settings = ({ navigation }) => {
     if(UserLoggedInData){
       let udata = JSON.parse(UserLoggedInData);
       setUserDetails(udata.user);
+      console.log("-----------------")
+      console.log(udata.user)
+      console.log("-----------------")
     }
   }
     
-  const logout = () => {
-    // AsyncStorage.clear();
+  const logout = async () => {
+    await AsyncStorage.removeItem('UserLoggedInData');
     auth()
       .signOut()
       .then(() => console.log('User signed out!'));
@@ -113,7 +116,7 @@ const Settings = ({ navigation }) => {
 
       <View style={style.itemCard}>
         <Image
-          source={require("./../assets/avatar.jpeg")}
+          source={{uri: userDetails ? userDetails.photoURL : "https://api-private.atlassian.com/users/9cea692d0a59c5e100680165cbbeb496/avatar"}}
           style={{ height: 50, width: 50, borderRadius: 50 }}
         />
         <View
@@ -125,10 +128,10 @@ const Settings = ({ navigation }) => {
           }}
         >
           <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-            Trinh Ngoc Bao
+            {userDetails?.displayName}
           </Text>
           <Text style={{ fontSize: 13, color: COLORS.grey }}>
-            baovippro@gmail.com
+          {userDetails?.email}
           </Text>
         </View>
         <View>
