@@ -12,6 +12,9 @@ import React from "react";
 import COLORS from "../constants/colors";
 import Icon from "react-native-vector-icons/Ionicons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Settings = ({ navigation }) => {
   const cacheAndCellularItems = [
@@ -35,6 +38,27 @@ const Settings = ({ navigation }) => {
     },
     { icon: "save-alt", text: "Cập nhật", sub: "chevron-right" },
   ];
+  const [userDetails, setUserDetails] = React.useState();
+  React.useEffect(()=>{
+    getUserData();
+  }, []);
+  const getUserData = async () => {
+    const UserLoggedInData = await AsyncStorage.getItem("UserLoggedInData")
+
+    if(UserLoggedInData){
+      let udata = JSON.parse(UserLoggedInData);
+      setUserDetails(udata.user);
+    }
+  }
+    
+  const logout = () => {
+    // AsyncStorage.clear();
+    auth()
+      .signOut()
+      .then(() => console.log('User signed out!'));
+      GoogleSignin.signOut()
+      navigation.navigate("Login")
+  }
 
   const renderSettingsItem = ({ icon, text, sub }) => (
     <TouchableOpacity activeOpacity={0.5}
@@ -156,6 +180,7 @@ const Settings = ({ navigation }) => {
           <TouchableOpacity
             activeOpacity={0.8}
             style={{ justifyContent: "center", alignItems: "center" }}
+            onPress={logout}
           >
             <View style={style.btnContainer}>
               <Text style={style.btnText}>

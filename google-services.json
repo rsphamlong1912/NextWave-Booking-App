@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "503063319327",
+    "project_id": "nextwavebookingapp",
+    "storage_bucket": "nextwavebookingapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503063319327:android:37f316f5d4157e4a55962a",
+        "android_client_info": {
+          "package_name": "com.ngocbao159.NextwaveBookingApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503063319327-pv6i1qfpeu1kb5ivh4jn38dc2sfu9qb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ngocbao159.NextwaveBookingApp",
+            "certificate_hash": "7d1b6ffcf60d80371f0c860dbf81cdae06eb3d0e"
+          }
+        },
+        {
+          "client_id": "503063319327-9mujhkdc2um01hcesmhfaa9grhhe5phg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQx9dfrHF4BY5kbHA8wryOzVieKl0XVeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503063319327-9mujhkdc2um01hcesmhfaa9grhhe5phg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

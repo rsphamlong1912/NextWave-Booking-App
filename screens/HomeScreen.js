@@ -8,7 +8,7 @@ import Restaurant from './../components/Restaurant'
 import RestaurantCard from '../components/RestaurantCard';
 import RestaurantDetail from './RestaurantDetail';
 
-export default function Home({navigation}) {
+export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Header />

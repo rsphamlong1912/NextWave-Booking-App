@@ -11,7 +11,7 @@ export default function RestaurantDetail({navigation, route}) {
             <StatusBar style="auto" />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <RestaurantCard item={route.params.detail} navigation={navigation}/>
-                <Restaurant />
+                <Restaurant navigation={navigation}/>
                 
             </ScrollView>
             <FloatingButton title="Chọn gói combo" onPress={()=>navigation.navigate('ComboDecoration')}/>
