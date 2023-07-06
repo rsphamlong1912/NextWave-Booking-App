@@ -30,9 +30,20 @@ const DetailButton = ({ title, onPress = () => {} }) => {
   );
 };
 
+const DeleteButton = ({ title, onPress = () => {} }) => {
+  return (
+    <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+      <View style={style.btnDelete}>
+        <Text style={style.smallTitle1}>{title}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
 const style = StyleSheet.create({
   title: { color: COLORS.white, fontWeight: "bold", fontSize: 18 },
   smallTitle: { color: COLORS.white, fontWeight: "bold", fontSize: 10 },
+  smallTitle1: { color: COLORS.primary, fontWeight: "bold", fontSize: 10 },
 
   btnContainer: {
     backgroundColor: COLORS.primary,
@@ -49,6 +60,16 @@ const style = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  btnDelete: {
+    backgroundColor: COLORS.white,
+    height: 20,
+    width: 60,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
-export { PrimaryButton, SecondaryButton, DetailButton };
+export { PrimaryButton, SecondaryButton, DetailButton, DeleteButton };

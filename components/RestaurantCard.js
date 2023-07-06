@@ -11,25 +11,13 @@ const RestaurantCard = ({navigation, item}) => {
     // <View style={styles.container}>
     //   <View style={styles.cardContainer}>
     <SafeAreaView style={{ backgroundColor: COLORS.light, flex: 1}}>
-      <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack}>
-      <View style={styles.header}>
-        <Icon name="chevron-back" size={28} color={'#fff'}/>
-        <Text style={{
-            fontSize: 18,
-            fontWeight: "bold",
-            color: "#fff",
-          }}>
-          Chi tiết nhà hàng
-        </Text>
-      </View>
-      </TouchableOpacity>
       <Card containerStyle={{ borderRadius: 10, marginBottom: 20, elevation: 0}}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.address}>
           <Icon name="location-sharp" size={15} color="#32b768" />
           {item.address}
         </Text>
-        <Card.Image source={item.image} style={{ borderRadius: 10 }} />
+        <Card.Image source={{uri: item.image}} style={{ borderRadius: 10 }} />
         <Text style={styles.sub}>
           <Icon name="time-sharp" size={15} color="#32b768" />
           Giờ mở cửa
@@ -85,7 +73,7 @@ const styles = StyleSheet.create({
   positionMap: {
     position: 'absolute',
     right: 0,
-    top: 20,
+    bottom: 0,
   },
   Card: {
     backgroundColor: '#fffff',

@@ -3,8 +3,17 @@ import { StyleSheet, TouchableOpacity, View, Text, Image } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import COLORS from "../constants/colors";
 import { DetailButton } from "./Button";
+import { DeleteButton } from "./Button";
 
-const ItemCardDecor = ({ item }) => {
+const ItemCardDecor = ({item, onPress, isChosen }) => {
+
+
+    const formatCost = (amount) => {
+      const formattedAmount = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      return `${formattedAmount} đ`;
+    };
+ 
+  
   return (
     <View style={style.itemCard}>
       <Image
@@ -24,12 +33,13 @@ const ItemCardDecor = ({ item }) => {
         </Text>
         <Text style={{ fontSize: 13, color: COLORS.grey }}>
           <Icon name="ios-checkmark-circle" size={15} color="#32b768" />
-          {item.category}
+          {formatCost(item.category)}
         </Text>
       </View>
       <View style={{ alignItems: "center", marginTop: 60 }}>
         <View style={{}}>
-          <DetailButton title="Chọn" />
+          {isChosen ? 
+           (<DeleteButton title="Hủy" onPress={onPress}/>): (<DetailButton title="Chọn" onPress={onPress}/>)}
         </View>
       </View>
     </View>

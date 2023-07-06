@@ -11,7 +11,7 @@ const Header = () => {
                     <Icon name="three-bars" size={25} />
                 </View>
                 <View style={styles.viewPlaceStyle}>
-                    <Text style={styles.type}>DELIVERY TO</Text>
+                    <Text style={styles.type}>BOOKING FROM</Text>
                     <View style={styles.placeStyle}>
                         <Icon name="location" size={15} />
                         <Text style={styles.place}>Quận 9, TP.HCM</Text>
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
         marginTop: 17,
         marginRight: 55,
         marginLeft: 55,
+        marginBottom:15,
         paddingRight: 15,
         fontStyle: 800
     },

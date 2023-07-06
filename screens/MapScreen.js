@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import {  } from 'react-native-maps';
 import Icon from "react-native-vector-icons/Ionicons";
-import { StyleSheet, View, Dimensions, TouchableOpacity, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, View, Dimensions, TouchableOpacity, Text, SafeAreaView, Image, ActivityIndicator } from 'react-native';
 import * as Location from 'expo-location';
 import COLORS from "../constants/colors";
 
@@ -33,6 +32,12 @@ export default function Map({ navigation, route }) {
             longitudeDelta: 0.005,
         })
     }
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => setIsLoading(false), 300)
+    }, []);
     // const [address, setAddress] = useState();
     return (
         <SafeAreaView style={styles.container}>
@@ -48,17 +53,29 @@ export default function Map({ navigation, route }) {
                     </Text>
                 </View>
             </TouchableOpacity>
-            <MapView style={styles.map}
-                region={mapRegion}
-                provider={PROVIDER_GOOGLE}
-            >
-                <Marker coordinate={mapRegion} title={route.params.item.name} />
-            </MapView>
             {/* <MapView style={styles.map}
-                region={mapSaSin}
-            >
-                <Marker coordinate={mapSaSin} title='Mì cay Sasin' />
-            </MapView> */}
+                region={mapRegion}
+                provider={PROVIDER_GOOGLE}>
+                <Marker coordinate={mapRegion} title={route.params.item.name} />
+            </MapView>   */}
+             {isLoading ?
+                (<View style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: 200,
+                    marginTop: 150
+                }}>
+                    <ActivityIndicator size="large" color='#32b768' />
+                </View>)
+                : (
+            <View style={{ flex: 1 }}>
+                <Image source={route.params.item.map}
+                    style={{
+                        width: Dimensions.get("window").width,
+                        height: Dimensions.get("window").height,
+                    }} />
+            </View>)}
         </SafeAreaView>
     );
 }
@@ -71,6 +88,7 @@ const styles = StyleSheet.create({
     map: {
         // width: '100%',
         // height: '100%',
+        flex: 1,
         width: Dimensions.get("window").width,
         height: Dimensions.get("window").height,
     },
@@ -81,5 +99,5 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginBottom: 0,
         backgroundColor: COLORS.primary,
-      },
+    },
 });
