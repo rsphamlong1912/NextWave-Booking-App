@@ -5,9 +5,10 @@ import {
   View,
   Text,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/Octicons";
 import COLORS from "../constants/colors";
 import ItemCard from "../components/ItemCard";
 
@@ -28,7 +29,7 @@ const restaurantsBooking = [
   },
 ];
 
-const BookingHistory = () => {
+const BookingHistory = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1 }}>
       <View style={style.header}>
@@ -54,13 +55,15 @@ const BookingHistory = () => {
               activeOpacity={0.8}
               style={{ justifyContent: "center", alignItems: "center" }}
             >
+              <Pressable onPress={() => navigation.navigate('Home1')}>
               <View style={style.btnContainer}>
                 <Text style={style.btnText}>
                   <Text>
-                    <Icon name="add" size={18} /> Đặt thêm chỗ
+                    <Icon name="plus" size={15} /> Đặt thêm chỗ
                   </Text>
                 </Text>
               </View>
+              </Pressable>
             </TouchableOpacity>
           </View>
         )}
@@ -90,7 +93,7 @@ const style = StyleSheet.create({
   btnText: {
     color: COLORS.grey,
     fontWeight: "500",
-    fontSize: 18,
+    fontSize: 15,
   },
   btnContainer: {
     backgroundColor: COLORS.white,

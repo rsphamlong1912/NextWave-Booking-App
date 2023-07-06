@@ -8,8 +8,10 @@ import BookingHistory from "./screens/BookingHistory";
 import RestaurantDetail from "./screens/RestaurantDetail";
 import Map from "./screens/MapScreen";
 import ComboDecoration from "./screens/ComboDecoration";
+import Checkout from "./screens/Checkout";
 import Settings from "./screens/Settings";
 import Login from "./screens/Login"
+import Order from "./screens/Order"
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 import TabRoute from "./components/TabRoute";
@@ -69,7 +71,9 @@ export default function Route() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={TabRoute} />
         <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
+        <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="ComboDecoration" component={ComboDecoration} />
+        <Stack.Screen name="Checkout" component={Checkout} />
         <Stack.Screen name="Map" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>

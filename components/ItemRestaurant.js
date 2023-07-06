@@ -8,7 +8,7 @@ import { DetailButton } from "./Button";
 const ItemRestaurant = ({ item, navigation }) => {
   return (
     <View style={style.itemCard}>
-      <Image source={item.image} style={{ height: 80, width: 80, borderRadius: 5 }} />
+      <Image source={{uri: item.image}} style={{ height: 80, width: 80, borderRadius: 5 }} />
       <View
         style={{
           height: 100,
