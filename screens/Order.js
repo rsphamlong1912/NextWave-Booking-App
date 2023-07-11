@@ -45,6 +45,62 @@ const time = [
     id: '7',
     time: '13:00'
   },
+  {
+    id: '8',
+    time: '13:30'
+  },
+  {
+    id: '9',
+    time: '14:00'
+  },
+  {
+    id: '10',
+    time: '14:30'
+  },
+  {
+    id: '11',
+    time: '15:00'
+  },
+  {
+    id: '12',
+    time: '15:30'
+  },
+  {
+    id: '13',
+    time: '16:00'
+  },
+  {
+    id: '14',
+    time: '16:30'
+  },
+  {
+    id: '15',
+    time: '17:00'
+  },
+  {
+    id: '16',
+    time: '17:30'
+  },
+  {
+    id: '17',
+    time: '18:00'
+  },
+  {
+    id: '18',
+    time: '18:30'
+  },
+  {
+    id: '19',
+    time: '19:00'
+  },
+  {
+    id: '20',
+    time: '19:30'
+  },
+  {
+    id: '21',
+    time: '20:00'
+  },
 ]
 const Order = ({ navigation, route }) => {
   const [dateOrder, setDateOrder] = React.useState('1');
@@ -72,31 +128,31 @@ const Order = ({ navigation, route }) => {
   const date = [
     {
       id: '1',
-      value: '07/04/2023'
+      value: '12/07/2023'
     },
     {
       id: '2',
-      value: '08/04/2023'
+      value: '13/07/2023'
     },
     {
       id: '3',
-      value: '09/04/2023'
+      value: '14/07/2023'
     },
     {
       id: '4',
-      value: '10/04/2023'
+      value: '15/07/2023'
     },
     {
       id: '5',
-      value: '11/04/2023'
+      value: '16/07/2023'
     },
     {
       id: '6',
-      value: '12/04/2023'
+      value: '17/07/2023'
     },
     {
       id: '7',
-      value: '13/04/2023'
+      value: '18/07/2023'
     },
   ]
   const customer = [
@@ -127,6 +183,18 @@ const Order = ({ navigation, route }) => {
     {
       id: '7',
       value: '7'
+    },
+    {
+      id: '8',
+      value: '8'
+    },
+    {
+      id: '9',
+      value: '9'
+    },
+    {
+      id: '10',
+      value: '10'
     },
   ]
   return (

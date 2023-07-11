@@ -12,6 +12,7 @@ import Checkout from "./screens/Checkout";
 import Settings from "./screens/Settings";
 import Login from "./screens/Login"
 import Order from "./screens/Order"
+import DoneDeal from "./screens/DoneDeal"
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 import TabRoute from "./components/TabRoute";
@@ -74,6 +75,7 @@ export default function Route() {
         <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="ComboDecoration" component={ComboDecoration} />
         <Stack.Screen name="Checkout" component={Checkout} />
+        <Stack.Screen name="DoneDeal" component={DoneDeal} />
         <Stack.Screen name="Map" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>

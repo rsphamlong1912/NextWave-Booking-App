@@ -93,8 +93,15 @@ const ComboDecoration = ({ navigation, route }) => {
     Snackbar.show({
       text: message,
       duration: Snackbar.LENGTH_SHORT,
-      backgroundColor: 'green',
+      duration: 1000,
+      backgroundColor: '#1ECA63',
       textColor: 'white',
+      marginBottom: 80,
+      action: {
+        text: 'Đóng',
+        textColor: '#fff',
+        onPress: () => { /* Do something. */ },
+      },
     });
   }
   const removeCombo = (deleteCombo) => {

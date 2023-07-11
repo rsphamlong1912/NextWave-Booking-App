@@ -5,12 +5,12 @@
     "plugins": ["@react-native-google-signin/google-signin"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logosplash.png",
+    "icon": "./assets/Logosplash.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/logosplash.png",
+      "image": "./assets/mainlogo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#111111"
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/Logosplash.png",
         "backgroundColor": "#ffffff"
       },
       "config": {

@@ -65,11 +65,11 @@ const Login = ({ navigation }) => {
         return subscriber; // unsubscribe on unmount
     }, []);
 
-    if (user) {
-        navigation.navigate("Home")
-    } else {
-        console.log("NO USER")
-    }
+    // if (user) {
+    //     navigation.navigate("Home")
+    // } else {
+    //     console.log("NO USER")
+    // }
 
     return (
         // <View style={styles.container}>
