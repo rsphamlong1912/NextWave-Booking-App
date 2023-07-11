@@ -2,8 +2,24 @@ import React from 'react';
 import { View, Image, Text, TextInput, StyleSheet } from 'react-native';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/Octicons';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Header = () => {
+    const [userDetails, setUserDetails] = React.useState();
+    React.useEffect(() => {
+        getUserData();
+    }, []);
+    const getUserData = async () => {
+        const UserLoggedInData = await AsyncStorage.getItem("UserLoggedInData")
+
+        if (UserLoggedInData) {
+            let udata = JSON.parse(UserLoggedInData);
+            setUserDetails(udata.user);
+            console.log("-----------------")
+            console.log(udata.user)
+            console.log("-----------------")
+        }
+    }
     return (
         <View>
             <View style={styles.top}>
@@ -19,11 +35,10 @@ const Header = () => {
                     </View>
                 </View>
                 <View style={styles.avatar}>
-                    <Image source={require('./../assets/avatar.jpeg')} style={{
-                        width: 36,
-                        height: 36, 
-                        borderRadius: 50
-                    }} />
+                    <Image
+                        source={{ uri: userDetails ? userDetails.photoURL : "https://api-private.atlassian.com/users/9cea692d0a59c5e100680165cbbeb496/avatar" }}
+                        style={{ height: 36, width: 36, borderRadius: 50 }}
+                    />
                 </View>
 
             </View>
@@ -82,7 +97,7 @@ const styles = StyleSheet.create({
         marginTop: 17,
         marginRight: 55,
         marginLeft: 55,
-        marginBottom:15,
+        marginBottom: 15,
         paddingRight: 15,
         fontStyle: 800
     },

@@ -44,6 +44,7 @@ const Checkout = ({ navigation, route }) => {
     const [showMethod2, setShowMethod2] = React.useState(false)
     const [item, setItem] = React.useState(route.params.detail)
     const [cost, setCost] = React.useState(0)
+    const length = 0;
     const formatCost = (amount) => {
         const formattedAmount = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         return `${formattedAmount} đ`;
@@ -147,19 +148,33 @@ const Checkout = ({ navigation, route }) => {
                                 <Icon name="copy-outline" size={20} color={'gray'} />
                             </View>
                         </View>)}
-
-                        <Pressable onPress={() => setModal(!modal)}>
-                            <View style={{
-                                margin: 10,
-                                height: 50,
-                                backgroundColor: '#32b768',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                borderRadius: 6
-                            }}>
-                                <Text style={{ fontWeight: 'bold', color: '#fff' }}>Hoàn tất</Text>
-                            </View>
-                        </Pressable>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Pressable onPress={() => setModal(!modal)} style={{ flex: 1 }}>
+                                <View style={{
+                                    margin: 10,
+                                    height: 50,
+                                    backgroundColor: 'gray',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    borderRadius: 6
+                                }}>
+                                    <Text style={{ fontWeight: 'bold', color: '#fff' }}>Hủy</Text>
+                                </View>
+                            </Pressable>
+                            <Pressable onPress={() => { setModal(!modal); navigation.navigate('DoneDeal'); }} style={{ flex: 1 }}>
+                                <View style={{
+                                    margin: 10,
+                                    marginLeft: 0,
+                                    height: 50,
+                                    backgroundColor: '#32b768',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    borderRadius: 6
+                                }}>
+                                    <Text style={{ fontWeight: 'bold', color: '#fff' }}>Đã thanh toán</Text>
+                                </View>
+                            </Pressable>
+                        </View>
                     </View>
                 </View>
             </Modal>
@@ -215,9 +230,13 @@ const Checkout = ({ navigation, route }) => {
                             {item.comboOrder.length === 0 ?
                                 (<Text>Không</Text>) :
                                 (
-                                    item.comboOrder.map((item, index) => (
-                                        <Text key={index}>{item.name}, </Text>
-                                    ))
+                                    <>
+                                        {item.comboOrder.map((combo, index) => {
+                                            if (index === item.comboOrder.length - 1) {
+                                                return <Text>{item.comboOrder[item.comboOrder.length - 1].name}.</Text>
+                                            } else return <Text key={index}>{combo.name}, </Text>
+                                        })}
+                                    </>
                                 )
                             }
                         </Text>

@@ -12,14 +12,15 @@ const Tab = createBottomTabNavigator();
 export default function TabRoute () {
     return (
       <Tab.Navigator
-        tabBarOptions={{
-          activeTintColor: "#32b768",
-          inactiveTintColor: "gray",
-          showLabel: false,
-          style: {
-            height: 60,
-            paddingTop: 10,
-            paddingBottom: 5,
+      screenOptions={{
+        tabBarActiveTintColor: "#32b768",
+        tabBarInactiveTintColor: "gray",
+          tabBarLabelStyle: {
+            display: "none",
+          },
+          tabBarStyle: {
+            borderTopLeftRadius: 30, 
+            borderTopRightRadius: 30, 
           },
         }}
       >
