@@ -233,7 +233,7 @@ const Checkout = ({ navigation, route }) => {
                                     <>
                                         {item.comboOrder.map((combo, index) => {
                                             if (index === item.comboOrder.length - 1) {
-                                                return <Text>{item.comboOrder[item.comboOrder.length - 1].name}.</Text>
+                                                return <Text key={index}>{item.comboOrder[item.comboOrder.length - 1].name}.</Text>
                                             } else return <Text key={index}>{combo.name}, </Text>
                                         })}
                                     </>
