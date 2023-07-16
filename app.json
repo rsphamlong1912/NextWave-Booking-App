@@ -3,7 +3,7 @@
     "name": "Nextwave-Booking-App",
     "slug": "Nextwave-Booking-App",
     "plugins": ["@react-native-google-signin/google-signin"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/Logosplash.png",
     "userInterfaceStyle": "light",
@@ -23,6 +23,7 @@
         "foregroundImage": "./assets/Logosplash.png",
         "backgroundColor": "#ffffff"
       },
+      "versionCode": 2,
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyB4iGvV74tvXZxZlkm9yLV60zF7JSwZ-9M"
